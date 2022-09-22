@@ -3,6 +3,30 @@ beloshapkabs Infra repository
 
 ---
 
+##Лекция №6
+
+###Дополнительное задание
+В качестве доп. задания используйте созданные ранее скрипты для
+создания , который будет запускаться при создании инстанса.
+```
+yc compute instance create `
+--name reddit-app `
+--hostname reddit-app `
+--memory=4 `
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB `
+--network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 `
+--metadata serial-port-enable=1 `
+--metadata-from-file .\user-data=metadata.yml
+```
+
+Для проверки дз:
+```
+testapp_IP = 178.154.207.67
+testapp_port = 9292
+```
+
+---
+
 ##Лекция №5
 
 ###Задание 1
