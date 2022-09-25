@@ -1,0 +1,7 @@
+[Unit]
+Description=puma service
+[Service]
+WorkingDirectory=/opt/reddit
+ExecStart=/usr/local/bin/puma
+[Install]
+WantedBy=multi-user.target
