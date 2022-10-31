@@ -3,7 +3,7 @@ variable "cloud_id" {
 }
 variable "cnt_inst" {
   description = "count of instance"
-  default = "1"
+  default     = "1"
 }
 variable "folder_id" {
   description = "Folder"
@@ -20,15 +20,12 @@ variable "app_zone" {
 }
 variable "region_id" {
   description = "Zone"
-  # Значение по умолчанию
   default = "ru-central1"
 }
 variable "public_key_path" {
-  # Описание переменной
   description = "Path to the public key used for ssh access"
 }
 variable "private_key_path" {
-  # Описание переменной
   description = "Path to the private key used for ssh access"
 }
 variable "image_id" {
@@ -39,4 +36,21 @@ variable "subnet_id" {
 }
 variable "service_account_key_file" {
   description = "key .json"
+}
+variable "app_disk_image" {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+variable "db_disk_image" {
+  description = "Disk image for reddit db"
+  default     = "reddit-db-base"
+}
+variable "bucket_name" {
+  description = "bucket name"
+}
+variable "access_key" {
+  description = "access key"
+}
+variable "secret_key" {
+  description = "secret key"
 }
