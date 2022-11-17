@@ -1,21 +1,13 @@
 {
-  "variables": {
-    "folder_id": "b1ghv8m5j4cbn07o2s3l",
-    "source_image_family": "ubuntu-1604-lts",
-    "platform_id": "standard-v1",
-    "disk_size": "10",
-    "username": "ubuntu",
-    "key_file": "C:\\Users\\beloshapkabs\\Documents\\atombook\\otus-dev-ops\\yc-iam-key.json"
-  },
   "builders": [
     {
       "type": "yandex",
       "service_account_key_file": "{{user `key_file`}}",
       "folder_id": "{{user `folder_id`}}",
-      "source_image_family": "{{user `source_image_family`}}",
+      "source_image_family": "{{user `image_family`}}",
       "image_name": "reddit-app-base-{{timestamp}}",
       "image_family": "reddit-app-base",
-      "disk_size_gb": "{{user `disk_size`}}",
+      "disk_size_gb": "{{user `disk_size_gb`}}",
       "ssh_username": "{{user `username`}}",
       "use_ipv4_nat": "true",
       "platform_id": "{{user `platform_id`}}"
@@ -23,9 +15,9 @@
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "script": "scripts/install_ruby.sh",
-      "execute_command": "sudo {{.Path}}"
+      "type": "ansible",
+      "playbook_file": "ansible/packer_app.yml",
+      "user": "ubuntu"
     }
   ]
 }

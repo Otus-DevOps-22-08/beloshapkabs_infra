@@ -1,6 +1,6 @@
 {
   "key_file": "key.json",
-  "folder_id": "abc",
+  "folder_id": "abc1",
   "image_family": "ubuntu",
   "subnet_id": "abc",
   "disk_size_gb": "15",

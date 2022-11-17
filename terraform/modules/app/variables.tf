@@ -17,5 +17,5 @@ variable db_ip {
 }
 variable use_provisioner {
   description = "use of provisioner or not"
-  default     = "true"
+  default     = "false"
 }
